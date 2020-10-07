@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
-import { createStackNavigator } from '@react-navigation/stack';
-import WelcomeScreen from '../screens/WelcomeScreen';
+import AppStack from '../navigation/AppStack';
+import AuthStack from '../navigation/AuthStack';
+import { connect } from 'react-redux'
 
-const Stack = createStackNavigator();
 
-
-export default class Main extends Component {
+class Main extends Component {
     render() {
+        const {user} = this.props
+        console.log("user is", user)
         return (
             <View style={styles.container}>
-            <Stack.Navigator>
-            <Stack.Screen name="Welcome" component={WelcomeScreen} />
-          </Stack.Navigator>
+            {user.user_token?
+               <AppStack /> :
+
+             <AuthStack />
+            }
+           
             </View>
         )
     }
@@ -23,3 +27,14 @@ const styles = StyleSheet.create({
         flex: 1
     }
 })
+
+
+const mapStateToProps = (state) => ({
+    user: state.user
+})
+
+const mapDispatchToProps = {
+    
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)

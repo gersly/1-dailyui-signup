@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, SafeAreaView } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
-import WelcomeScreen from '../screens/WelcomeScreen';
+import WelcomeScreen from '../screens/auth/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
