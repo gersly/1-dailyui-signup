@@ -50,6 +50,7 @@ class WelcomeScreen extends Component {
                 {/* Apple Button */}
                 <View style={styles.buttonContainer}>
                 <TouchableOpacity 
+                onPress={() => this.props.user_login()}
                 activeOpacity={.5}
                 style={[styles.button,{
                     backgroundColor: '#A3AAAE'
@@ -63,6 +64,7 @@ class WelcomeScreen extends Component {
                 {/* Email Button */}
                 <View style={styles.buttonContainer}>
                 <TouchableOpacity 
+                onPress={() => this.props.user_login()}
                 activeOpacity={.5}
                 style={[styles.button,{
                     backgroundColor: '#1A1A1A'
@@ -74,6 +76,7 @@ class WelcomeScreen extends Component {
                 {/* Email Button */}
                 <View style={styles.buttonContainer}>
                 <TouchableOpacity 
+                onPress={() => this.props.user_login()}
                 activeOpacity={.5}
                 style={[styles.button,{
                     backgroundColor: 'transparent'
